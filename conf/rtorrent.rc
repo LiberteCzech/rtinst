@@ -29,8 +29,8 @@ throttle.global_down.max_rate.set = 0
 throttle.global_up.max_rate.set = 0
 
 # Maximum number of simultaneous downloads and uploads slots
-throttle.max_downloads.global.set = 150
-throttle.max_uploads.global.set = 150
+throttle.max_downloads.global.set = 100
+throttle.max_uploads.global.set = 100
 
 # Maximum and minimum number of peers to connect to per torrent while downloading
 throttle.min_peers.normal.set = 1
@@ -57,18 +57,22 @@ network.http.ssl_verify_peer.set = 0
 protocol.encryption.set = allow_incoming,enable_retry,prefer_plaintext
 
 network.max_open_files.set = 16384
-network.max_open_sockets.set = 1536
+network.max_open_sockets.set = 999
 network.http.max_open.set = 48
 network.send_buffer.size.set = 8M
-network.receive_buffer.size.set = 8M
+network.receive_buffer.size.set = 12M
 network.xmlrpc.size_limit.set = 8M
 
 ### Memory Settings
 pieces.hash.on_completion.set = no
-pieces.preload.type.set = 1
+pieces.preload.type.set = 2
 pieces.memory.max.set = 1200M
 pieces.preload.min_size.set = 262144
 pieces.preload.min_rate.set = 5120
+
+### Session save
+# Save all the sessions in every 12 hours instead of the default 20 minutes.
+schedule2 = session_save, 1200, 43200, ((session.save))
 
 ### Logging:
 #   Levels = critical error warn notice info debug
