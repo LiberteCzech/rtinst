@@ -1,6 +1,7 @@
 # rtinst
 
-
+This script is work-based by https://github.com/arakasi72 and https://github.com/Aniverse
+With my any modifications and diferent settings. 
 
 ## Installation
 
