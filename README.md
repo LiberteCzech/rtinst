@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-bash -c "$(wget --no-check-certificate -qO- https://raw.githubusercontent.com/Aniverse/rtinst/master/rtsetup)"
+bash -c "$(wget --no-check-certificate -qO- https://raw.githubusercontent.com/LiberteCzech/rtinst/master/rtsetup)"
 ```
 ```
 rtinst -$opinions -v $rtorrentVERSION -u $USERNAME -p $PASSWORD -w $WEBPASSWORD 
