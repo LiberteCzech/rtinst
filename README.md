@@ -1,6 +1,6 @@
 # rtinst
 
-This script is made by https://github.com/arakasi72 with added functions by https://github.com/Aniverse
+This script is made by (https://github.com/arakasi72) with added functions by (https://github.com/Aniverse)
 with my modifications and diferent settings. 
 
 ## Installation
