@@ -2,7 +2,7 @@
 
 #########################################################################################
 #
-#  Copyright (c) 2015 arakasi72 (https://github.com/arakasi72)
+#  Copyright (c) 2015 LiberteCzech (https://github.com/LiberteCzech)
 #
 #  Modified by Aniverse
 #
@@ -253,7 +253,7 @@ else
  echo $fullrel
  echo "Only Ubuntu release 14 and later, and Debian and Raspbian release 8 and later, are supported"
  echo "Your system does not appear to be supported"
- echo "Check https://github.com/arakasi72/rtinst/wiki/Installing-on-Older-OS to see if it is supported by an earlier rtinst release"
+ echo "Check https://github.com/LiberteCzech/rtinst/wiki/Installing-on-Older-OS to see if it is supported by an earlier rtinst release"
  exit
 fi
 
