@@ -56,7 +56,7 @@ network.scgi.open_port = 127.0.0.1:5000
 network.http.ssl_verify_peer.set = 0
 protocol.encryption.set = allow_incoming,enable_retry,prefer_plaintext
 
-network.max_open_files.set = 4096
+network.max_open_files.set = 16384
 network.max_open_sockets.set = 1536
 network.http.max_open.set = 48
 network.send_buffer.size.set = 8M
