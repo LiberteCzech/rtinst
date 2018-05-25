@@ -1,7 +1,9 @@
 # rtinst
 
 This script is made by [arakasi72](https://github.com/arakasi72) with added functions by [Aniverse](https://github.com/Aniverse)
-with my modifications and diferent settings. 
+with my modifications and diferent settings.
+
+[Changelog](https://github.com/LiberteCzech/rtinst/wiki/Changelog)
 
 ## Installation
 
