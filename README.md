@@ -11,7 +11,7 @@ bash -c "$(wget --no-check-certificate -qO- https://raw.githubusercontent.com/Li
 rtinst -$opinions -v $rtorrentVERSION -u $USERNAME -p $PASSWORD -w $WEBPASSWORD 
 ```
 ```
-rtinst -tfylmi -v 0.9.4 -u aniverse -p kinots74212 -w rutmypa44  
+rtinst -tflmi -v 0.9.6 -u aniverse -p seB6v4eVar6g4be1Ebv -w w6fF4gaerh4SVs9b  
 ```
 
 - `-t` Do NOT change SSH port  
