@@ -1,12 +1,12 @@
-# This is the rtorrent configuration file installed by rtinst script - https://github.com/arakasi72/rtinst
+# This is the rtorrent configuration file installed by rtinst script - https://github.com/LiberteCzech/rtinst
 # This file is installed to ~/.rtorrent.rc
 # Enable/modify the options as needed, uncomment the options you wish to enable.
 # This configuration will work with most systems, but optimal settings are dependant on specific server setup
 
 min_peers = 1
-max_peers = 5000
-min_peers_seed = -1
-max_peers_seed = -1
+max_peers = 15
+min_peers_seed = 1
+max_peers_seed = 15
 max_uploads = 5000
 download_rate = 0
 upload_rate = 0
@@ -29,12 +29,12 @@ throttle.global_down.max_rate.set = 0
 throttle.global_up.max_rate.set = 0
 
 # Maximum number of simultaneous downloads and uploads slots
-throttle.max_downloads.global.set = 5000
-throttle.max_uploads.global.set = 5000
+throttle.max_downloads.global.set = 400
+throttle.max_uploads.global.set = 400
 
 # Maximum and minimum number of peers to connect to per torrent while downloading
 throttle.min_peers.normal.set = 1
-throttle.max_peers.normal.set = 5000
+throttle.max_peers.normal.set = 15
 
 # Same as above but for seeding completed torrents (seeds per torrent)
 throttle.min_peers.seed.set = -1
@@ -43,9 +43,13 @@ throttle.max_peers.seed.set = -1
 ### Networking
 network.port_range.set = 51001-51250
 network.port_random.set = yes
-dht.mode.set = disable
+dht.mode.set = auto
 protocol.pex.set = no
 trackers.use_udp.set = yes
+
+# UDP port to use for DHT. 
+#
+dht.port.set = 6881
 
 # network.scgi.open_port = localhost:5000
 network.scgi.open_port = 127.0.0.1:5000
@@ -62,7 +66,7 @@ network.xmlrpc.size_limit.set = 4M
 ### Memory Settings
 pieces.hash.on_completion.set = no
 pieces.preload.type.set = 1
-pieces.memory.max.set = 3500M
+pieces.memory.max.set = 1200M
 pieces.preload.min_size.set = 262144
 pieces.preload.min_rate.set = 5120
 
