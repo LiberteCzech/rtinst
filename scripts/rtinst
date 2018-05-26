@@ -504,42 +504,55 @@ if [[ $phpver =~ php7.[0-9] ]]; then
 fi
 
 #install unrar package
-if ! installed unrar; then
-    echo "Installing rar/unrar"
-    cd /root
+if [ $osname = "Debian" ] && ! installed unrar; then
+  echo "Installing rar/unrar"
+  cd $home
+  attempts=0
+  until [ -d rar ] || [ $attempts -gt 5 ]
+  do
+    attempts=$(( $attempts + 1 ))
     if [ "$(uname -m)" = "x86_64" ]; then
-        wget https://github.com/Aniverse/BitTorrentClientCollection/raw/master/Other%20Tools/rarlinux-x64-5.5.0.tar.gz >> $logfile 2>&1
-        tar xvzf rarlinux-x64-5.5.0.tar.gz >> $logfile 2>&1
-        rm rarlinux-x64-5.5.0.tar.gz
+      wget http://www.rarlab.com/rar/rarlinux-x64-5.5.0.tar.gz >> $logfile 2>&1
+      tar xvzf rarlinux-x64-5.5.0.tar.gz >> $logfile 2>&1
+      rm rarlinux-x64-5.5.0.tar.gz
     elif [ "$(uname -m)" = "x86_32" ]; then
-        wget https://github.com/Aniverse/BitTorrentClientCollection/raw/master/Other%20Tools/rarlinux-5.5.0.tar.gz >> $logfile 2>&1
-        tar xvzf rarlinux-5.5.0.tar.gz >> $logfile 2>&1
-        rm rarlinux-5.5.0.tar.gz
+      wget http://www.rarlab.com/rar/rarlinux-5.5.0.tar.gz >> $logfile 2>&1
+      tar xvzf rarlinux-5.5.0.tar.gz >> $logfile 2>&1
+      rm rarlinux-5.5.0.tar.gz
     fi
-    cp -f /root/rar/rar /bin/rar
-    cp -f /root/rar/unrar /bin/unrar
-    rm -r /root/rar
+  done
+  if [ -d rar ]; then
+    cp $home/rar/rar /bin/rar
+    cp $home/rar/unrar /bin/unrar
+    rm -r $home/rar
+  fi
+elif [ $osname = "Ubuntu" ]; then
+  apt-get -qq install unrar >> $logfile 2>&1
 fi
 
 if installed unrar; then
-    echo "rar/unrar installed"
+  echo "rar/unrar installed"
 else
-    echo "rar/unrar install failed"
+  echo "rar/unrar install failed"
 fi
 
 #install ffmpeg
-echo "Installing ffmpeg" ; cd
-if [ "$(uname -m)" = "x86_64" ]; then
-    wget https://github.com/Aniverse/BitTorrentClientCollection/raw/master/Other%20Tools/ffmpeg-3.4.2-64bit-static.tar.xz >> $logfile 2>&1
-    tar xf ffmpeg-3.4.2-64bit-static.tar.xz
-elif [ "$(uname -m)" = "x86_32" ]; then
-    wget https://github.com/Aniverse/BitTorrentClientCollection/raw/master/Other%20Tools/ffmpeg-3.4.2-32bit-static.tar.xz >> $logfile 2>&1
-    tar xf ffmpeg-3.4.2-32bit-static.tar.xz
+if ! [ $osname = "Raspbian" ] && [ $(dpkg-query -W -f='${Status}' "ffmpeg" 2>/dev/null | grep -c "ok installed") = 0 ]; then
+  echo "Installing ffmpeg"
+  if [ $relno = 14 ]; then
+    apt-add-repository -y ppa:mc3man/trusty-media >> $logfile 2>&1
+    apt-get -qq update >> $logfile 2>&1
+    apt-get -qq install ffmpeg >> $logfile 2>&1
+  elif [ $relno = 8 ]; then
+    grep "deb http://www.deb-multimedia.org jessie main" /etc/apt/sources.list >> /dev/null || echo "deb http://www.deb-multimedia.org jessie main" >> /etc/apt/sources.list
+    apt-get -qq update >> $logfile 2>&1
+    apt-get -qq --force-yes install deb-multimedia-keyring >> $logfile 2>&1
+    apt-get -qq update >> $logfile 2>&1
+    apt-get -qq --force-yes install ffmpeg >> $logfile 2>&1
+  else
+    apt-get -qq install ffmpeg >> $logfile 2>&1
+  fi
 fi
-rm -rf ffmpeg-*bit-static/{manpages,presets,readme.txt,GPLv3.txt}
-cp ffmpeg-*bit-static/* /usr/local/bin
-chmod 755 /usr/local/bin/{ffmpeg,ffprobe,ffmpeg-10bit,qt-faststart}
-rm -rf ffmpeg-*bit-static*
 
 echo "Completed installation of required packages        "
 
