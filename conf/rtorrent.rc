@@ -42,7 +42,7 @@ throttle.max_peers.seed.set = -1
 
 ### Networking
 network.port_range.set = 51001-51250
-network.port_random.set = yes
+network.port_random.set = no
 dht.mode.set = auto
 protocol.pex.set = yes
 trackers.use_udp.set = yes
