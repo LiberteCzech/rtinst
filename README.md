@@ -29,9 +29,6 @@ rtinst -tflmi -v 0.9.6 -u hermiona -p seB6v4eVar6g4be1Ebv -w w6fF4gaerh4SVs9b
 - `-v` Set the rTorrent version you would like to be installed  
 
 
-
-
-
 ## Modifications
 
 - **New Opinions**  
@@ -43,28 +40,12 @@ Using `-v` opinion to select the rtorrent version to be installed
 - **ruTorrent plugins and themes**  
 Install club-QuickBox theme  
 Install MaterialDesign theme  
-Install Filemanager plugin  
-Install Fileshare plugin  
-Install Mediastream plugin  
-Install sox for ruTorrent spectrogram plugin  
-Enable m2ts support for screenshots plugin  
-Set SCGIServerTimeout to 60  
-Fix AutoDL-Irssi issue on Ubuntu 16.04  
 
-- **Install h5ai as file indexer**  
-- **Install ffmpeg 3.4.2 from static builds**  
-- **Install rar, unrar 5.5.0 (donot use apt)**  
+
 - **Enable rTorrent logging**  
 - **Tweak rTorrent default settings**  
 - **Do NOT disable root login**  
 - **Raised open file limits to 666666**  
-
-- **Setup Nginx Reverse Proxy for Deluge, qBittorrent and Transmission**  
-2018.04.06: Temporarily disabled  
-
-- **To be added ...**  
-
-
 
 
 ## Guides
