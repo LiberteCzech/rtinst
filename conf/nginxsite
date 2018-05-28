@@ -19,12 +19,8 @@ server {
         
         ssl_certificate /etc/ssl/ruweb.crt;
         ssl_certificate_key /etc/ssl/private/ruweb.key;
-        ssl_protocols TLSv1.2; # Dropping SSLv3, ref: POODLE
-        ssl_dhparam /etc/nginx/ssl/dhparam.pem;
-        ssl_session_cache shared:SSL:5m;
         ssl_session_timeout 5m;
-        ssl_prefer_server_ciphers on
-        ssl_ciphers EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
+
         
         location /h5ai {
                try_files $uri $uri/ =404;
