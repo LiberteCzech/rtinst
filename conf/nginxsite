@@ -22,6 +22,7 @@ server {
         ssl_dhparam /etc/nginx/ssl/dhparam.pem;
         ssl_session_cache shared:SSL:5m;
         ssl_session_timeout 5m;
+        add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;
         
         location /h5ai {
                try_files $uri $uri/ =404;
