@@ -19,6 +19,7 @@ server {
         
         ssl_certificate /etc/ssl/ruweb.crt;
         ssl_certificate_key /etc/ssl/private/ruweb.key;
+        ssl_protocols TLSv1.2; # Dropping SSLv3, ref: POODLE
         ssl_dhparam /etc/nginx/ssl/dhparam.pem;
         ssl_session_cache shared:SSL:5m;
         ssl_session_timeout 5m;
