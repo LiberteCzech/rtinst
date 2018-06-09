@@ -91,7 +91,7 @@ passflag=0
 forceyes=1
 selfsign=1
 rut_add_users=1
-rtorrentrel=''
+rtorrentrel='0.9.6'
 enable_ipv6=1
 
 ###############################
