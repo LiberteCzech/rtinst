@@ -21,7 +21,7 @@ For install new rtinst
 ```
 rtinst -tflmi -v 0.9.6 -u hermiona -p seB6v4eVar6g4be1Ebv -w w6fF4gaerh4SVs9b  
 ```
-For reinstal if you have upgraded to 0.9.7
+For reinstall if you have upgraded to 0.9.7
 ```
 rtinst -tflmi -v 0.9.7 -u hermiona -p seB6v4eVar6g4be1Ebv -w w6fF4gaerh4SVs9b  
 ```
