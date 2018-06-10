@@ -5,6 +5,8 @@ with my modifications and diferent settings.
 
 [Changelog](https://github.com/LiberteCzech/rtinst/wiki/Changelog)
 
+[Performance and security hacks](https://github.com/LiberteCzech/rtinst/wiki/Performance-and-security-hacks)
+
 ## Installation
 
 ```
