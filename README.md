@@ -2,6 +2,8 @@
 
 This script is made by [arakasi72](https://github.com/arakasi72) with added functions by [Aniverse](https://github.com/Aniverse)
 with my modifications and diferent settings.
+My modifications targeting on slow devices, lightweight, greater performance and security.
+
 
 [Changelog](https://github.com/LiberteCzech/rtinst/wiki/Changelog)
 
