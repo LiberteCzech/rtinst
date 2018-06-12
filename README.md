@@ -7,7 +7,7 @@ with my modifications and diferent settings.
 
 [Changelog](https://github.com/LiberteCzech/rtinst/wiki/Changelog)
 
-[Performance and security hacks](https://github.com/LiberteCzech/rtinst/wiki/Performance-and-security-hacks) (I make wiki with any improved confugration of recommendations)
+[Performance and security hacks](https://github.com/LiberteCzech/rtinst/wiki/Performance-and-security-hacks) (I make wiki with any improved configurations of recommendations)
 
 ## Installation
 
