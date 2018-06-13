@@ -72,11 +72,11 @@ pieces.preload.min_rate.set = 5120
 
 ### Session save
 # Save all the sessions in every 12 hours instead of the default 20 minutes.
-schedule2 = session_save, 1200, 43200, ((session.save))
+# schedule2 = session_save, 1200, 43200, ((session.save))
 
 ### Close torrents when diskspace is low.
 #
-schedule2 = low_diskspace,5,60,close_low_diskspace=100M
+schedule2 = low_diskspace,5,60,close_low_diskspace=1000M
 
 ### Logging:
 #   Levels = critical error warn notice info debug
