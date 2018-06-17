@@ -750,6 +750,7 @@ echo 'proxy_buffering off;' >> /etc/nginx/conf.d/proxy
 # clients reverse proxy
 mkdir -p /etc/nginx/snippets
 cp -f /etc/rtinst/conf/rutorrent.conf    /etc/nginx/snippets/rutorrent.conf
+cp -f /etc/rtinst/conf/qbittorrent.conf   /etc/nginx/snippets/qbittorrent.conf
 
 service nginx restart && service $phpver-fpm restart
 
